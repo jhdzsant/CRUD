@@ -19,7 +19,7 @@ class Usuario extends CI_Controller{
         */
     }
     function getUsuarios(){
-        $this->$modelo->getUsuarios();
+        $this-usuariomodelo->getUsuarios();
     }
 
     function addUsuario(){
@@ -39,7 +39,7 @@ class Usuario extends CI_Controller{
         $id          = $this->input->post('id');
         $email       = $this->input->post('nombre');
         $password    = $this->input->post('apellidopaterno');
-        $dato = $this->usuariomodelo->addUsuario($email, $password, $id);
+        $dato = $this->usuariomodelo->updUsuario($email, $password, $id);
         if($dato = TRUE){
             echo "el usuario se áctualizo correctamente";
         }else{
@@ -49,8 +49,8 @@ class Usuario extends CI_Controller{
 
     function delUsuario()
     {
-        $id_usuario = $this->input->post('id_usuario');
-        $dato = $this->$modelo->delUsuario($id_usuario);
+        $id = $this->input->post('id');
+        $dato = $this->usuariomodelo->delUsuario($id);
         if ($dato = TRUE) {
             echo "el usuario se borro correctamente";
         } else {
