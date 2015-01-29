@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component name="dataSourceStorage">
+  <data-source name="MySQL - promocionate@localhost" uuid="ce51cec2-21a6-4fb1-94e5-42f9215c284c">
+    <database-info product="MySQL" version="5.6.21" jdbc-version="4.0" driver-name="MySQL Connector Java" driver-version="mysql-connector-java-5.1.34 ( Revision: jess.balint@oracle.com-20141014163213-wqbwpf1ok2kvo1om )">
+      <extra-name-characters>#@</extra-name-characters>
+      <identifier-quote-string>`</identifier-quote-string>
+    </database-info>
+    <case-sensitivity plain-identifiers="lower" quoted-identifiers="lower"/>
+    <schema name="" catalog="promocionate"/>
+    <table name="articulos" schema="" catalog="promocionate" type="TABLE">
+      <column name="nombre" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="categoria" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="id_proovedor" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="descripcion" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="costo" sqlType="DOUBLE" precision="15" scale="2" nullable="false" jdbcType="8"/>
+      <column name="precio_unitario" sqlType="DOUBLE" precision="15" scale="2" nullable="false" jdbcType="8"/>
+      <column name="cantidad" sqlType="DOUBLE" precision="15" scale="2" nullable="false" jdbcType="8" def="MC4wMA=="/>
+      <column name="id_articulo" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="borrado" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" def="MA=="/>
+      <primary-key name="PRIMARY" columns="id_articulo"/>
+      <foreign-key name="articulos_ibfk_1" columns="id_proovedor" ref-table="proovedores" ref-schema="" ref-catalog="promocionate" ref-columns="id_persona" update-rule="3" delete-rule="3" deferrability="2"/>
+      <exported-key name="factura_articulos_ibfk_1" table="factura_articulos" schema="" catalog="promocionate" columns="id_articulo"/>
+      <exported-key name="recepciones_articulos_ibfk_1" table="recepciones_articulos" schema="" catalog="promocionate" columns="id_articulo"/>
+      <index name="articulos_ibfk_1" unique="false" columns="id_proovedor"/>
+    </table>
+    <table name="clientes" schema="" catalog="promocionate" type="TABLE">
+      <column name="id_persona" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="id_tipo" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="compania" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="borrado" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" def="MA=="/>
+      <foreign-key name="clientes_ibfk_1" columns="id_persona" ref-table="personas" ref-schema="" ref-catalog="promocionate" ref-columns="id_persona" update-rule="3" delete-rule="3" deferrability="2"/>
+      <exported-key name="factura_ibfk_2" table="factura" schema="" catalog="promocionate" columns="id_cliente"/>
+    </table>
+    <table name="empleados" schema="" catalog="promocionate" type="TABLE">
+      <column name="id_persona" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="usuario" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="password" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="borrado" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" def="MA=="/>
+      <foreign-key name="empleados_ibfk_1" columns="id_persona" ref-table="personas" ref-schema="" ref-catalog="promocionate" ref-columns="id_persona" update-rule="3" delete-rule="3" deferrability="2"/>
+      <exported-key name="factura_ibfk_1" table="factura" schema="" catalog="promocionate" columns="id_empleado"/>
+      <exported-key name="recepciones_ibfk_1" table="recepciones" schema="" catalog="promocionate" columns="id_empleado"/>
+      <index name="usuario" unique="true" columns="usuario"/>
+    </table>
+    <table name="factura" schema="" catalog="promocionate" type="TABLE">
+      <column name="fecha_factura" sqlType="TIMESTAMP" precision="19" scale="0" nullable="false" jdbcType="93" def="Q1VSUkVOVF9USU1FU1RBTVA="/>
+      <column name="id_cliente" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="id_empleado" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="id_factura" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <primary-key name="PRIMARY" columns="id_factura"/>
+      <foreign-key name="factura_ibfk_1" columns="id_empleado" ref-table="empleados" ref-schema="" ref-catalog="promocionate" ref-columns="id_persona" update-rule="3" delete-rule="3" deferrability="2"/>
+      <foreign-key name="factura_ibfk_2" columns="id_cliente" ref-table="clientes" ref-schema="" ref-catalog="promocionate" ref-columns="id_persona" update-rule="3" delete-rule="3" deferrability="2"/>
+      <exported-key name="factura_articulos_ibfk_2" table="factura_articulos" schema="" catalog="promocionate" columns="id_factura"/>
+    </table>
+    <table name="factura_articulos" schema="" catalog="promocionate" type="TABLE">
+      <column name="id_factura" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="id_articulo" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="id_tecnica" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="id_logo" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="descripcion" sqlType="VARCHAR" precision="30" scale="0" nullable="true" jdbcType="12"/>
+      <column name="linea" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="cantidad_comprada" sqlType="DOUBLE" precision="15" scale="2" nullable="false" jdbcType="8" def="MC4wMA=="/>
+      <column name="costo" sqlType="DECIMAL" precision="15" scale="2" nullable="false" jdbcType="3"/>
+      <column name="precio_unitario" sqlType="DOUBLE" precision="15" scale="2" nullable="false" jdbcType="8"/>
+      <column name="porcentaje_descuento" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="color" sqlType="VARCHAR" precision="30" scale="0" nullable="true" jdbcType="12"/>
+      <column name="pantone" sqlType="VARCHAR" precision="30" scale="0" nullable="true" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="id_factura,id_articulo,linea"/>
+      <foreign-key name="factura_articulos_ibfk_1" columns="id_articulo" ref-table="articulos" ref-schema="" ref-catalog="promocionate" ref-columns="id_articulo" update-rule="3" delete-rule="3" deferrability="2"/>
+      <foreign-key name="factura_articulos_ibfk_2" columns="id_factura" ref-table="factura" ref-schema="" ref-catalog="promocionate" ref-columns="id_factura" update-rule="3" delete-rule="3" deferrability="2"/>
+      <index name="factura_articulos_ibfk_1" unique="false" columns="id_articulo"/>
+    </table>
+    <table name="personas" schema="" catalog="promocionate" type="TABLE">
+      <column name="nombre" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="apellidos" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="telefono" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="email" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="direccion" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="ciudad" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="estado" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="cp" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="id_persona" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <primary-key name="PRIMARY" columns="id_persona"/>
+      <exported-key name="clientes_ibfk_1" table="clientes" schema="" catalog="promocionate" columns="id_persona"/>
+      <exported-key name="empleados_ibfk_1" table="empleados" schema="" catalog="promocionate" columns="id_persona"/>
+      <exported-key name="proovedores_ibfk_1" table="proovedores" schema="" catalog="promocionate" columns="id_persona"/>
+    </table>
+    <table name="productos" schema="" catalog="promocionate" type="TABLE">
+      <column name="idProductos" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="idUser" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="nombreProducto" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="descripcionProducto" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="colorProducto" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="idProductos"/>
+    </table>
+    <table name="proovedores" schema="" catalog="promocionate" type="TABLE">
+      <column name="id_persona" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="nombre_compania" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="borrado" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" def="MA=="/>
+      <foreign-key name="proovedores_ibfk_1" columns="id_persona" ref-table="personas" ref-schema="" ref-catalog="promocionate" ref-columns="id_persona" update-rule="3" delete-rule="3" deferrability="2"/>
+      <exported-key name="articulos_ibfk_1" table="articulos" schema="" catalog="promocionate" columns="id_proovedor"/>
+      <exported-key name="recepciones_ibfk_2" table="recepciones" schema="" catalog="promocionate" columns="id_proovedor"/>
+    </table>
+    <table name="recepciones" schema="" catalog="promocionate" type="TABLE">
+      <column name="fecha_recepcion" sqlType="TIMESTAMP" precision="19" scale="0" nullable="false" jdbcType="93" def="Q1VSUkVOVF9USU1FU1RBTVA="/>
+      <column name="id_proovedor" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="id_empleado" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="id_recepcion" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <primary-key name="PRIMARY" columns="id_recepcion"/>
+      <foreign-key name="recepciones_ibfk_1" columns="id_empleado" ref-table="empleados" ref-schema="" ref-catalog="promocionate" ref-columns="id_persona" update-rule="3" delete-rule="3" deferrability="2"/>
+      <foreign-key name="recepciones_ibfk_2" columns="id_proovedor" ref-table="proovedores" ref-schema="" ref-catalog="promocionate" ref-columns="id_persona" update-rule="3" delete-rule="3" deferrability="2"/>
+      <exported-key name="recepciones_articulos_ibfk_2" table="recepciones_articulos" schema="" catalog="promocionate" columns="id_recepcion"/>
+    </table>
+    <table name="recepciones_articulos" schema="" catalog="promocionate" type="TABLE">
+      <column name="id_recepcion" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="id_articulo" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="descripcion" sqlType="VARCHAR" precision="30" scale="0" nullable="true" jdbcType="12"/>
+      <column name="linea" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="cantidad_comprada" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="costo" sqlType="DECIMAL" precision="15" scale="2" nullable="false" jdbcType="3"/>
+      <column name="precio_unitario" sqlType="DOUBLE" precision="15" scale="2" nullable="false" jdbcType="8"/>
+      <column name="porcentaje_descuento" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" def="MA=="/>
+      <primary-key name="PRIMARY" columns="id_recepcion,id_articulo,linea"/>
+      <foreign-key name="recepciones_articulos_ibfk_1" columns="id_articulo" ref-table="articulos" ref-schema="" ref-catalog="promocionate" ref-columns="id_articulo" update-rule="3" delete-rule="3" deferrability="2"/>
+      <foreign-key name="recepciones_articulos_ibfk_2" columns="id_recepcion" ref-table="recepciones" ref-schema="" ref-catalog="promocionate" ref-columns="id_recepcion" update-rule="3" delete-rule="3" deferrability="2"/>
+    </table>
+    <table name="tecnica" schema="" catalog="promocionate" type="TABLE">
+      <column name="id_tecnica" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="descripcion" sqlType="VARCHAR" precision="40" scale="0" nullable="false" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="id_tecnica"/>
+    </table>
+    <table name="users" schema="" catalog="promocionate" type="TABLE">
+      <column name="id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="email" sqlType="VARCHAR" precision="100" scale="0" nullable="false" jdbcType="12"/>
+      <column name="password" sqlType="VARCHAR" precision="100" scale="0" nullable="false" jdbcType="12"/>
+      <column name="created_at" sqlType="TIMESTAMP" precision="19" scale="0" nullable="false" jdbcType="93" def="Q1VSUkVOVF9USU1FU1RBTVA="/>
+      <primary-key name="PRIMARY" columns="id"/>
+    </table>
+  </data-source>
+</component>
