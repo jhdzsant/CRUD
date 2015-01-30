@@ -14,7 +14,7 @@
               <span class="icon-bar"></span>
             </button>
             <a class="navbar-brand pad-left-0" href="/">
-             <strong>Promocionat</strong><span style="opacity:0.3">admin</span>
+             <strong>Promocionat </strong><span style="opacity:0.3">admin</span>
             </a>
         </div>
      <nav class="collapse navbar-collapse">

@@ -8,7 +8,12 @@ class Usuario extends CI_Controller{
     }
 
     function index(){
-        $this->load->view('usuario');
+        $dato['contenido'] = 'pages/signup';
+        $dato['header'] = 'partials/header';
+        $dato['sidebar'] = 'partials/sidebar';
+        $dato['titulo'] = 'Registrar Usuario';
+
+        $this->load->view('template',$dato);
         /*
         $sesion = $this->session->getUsuarioId();
         if(!isset $sesion || $sesion = '' || $sesion == NULL){

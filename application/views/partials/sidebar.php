@@ -36,6 +36,9 @@
             <li data-ng-class="{active: isActive('/dashboard-2')}"><a href="/dashboard-2">Dashboard 2</a></li>
         </ul>
     </li>
+    <li><a href="<?= base_url('/usuario') ?>"><i class="fa fa-cube menu-icon"></i> <span >Usuarios</span></a></li>
+    <li><a href="<?= base_url('/home/error404') ?>"><i class="fa fa-cube menu-icon"></i> <span >Error 404</span></a></li>
+    <li><a href="<?= base_url('/home/error500') ?>"><i class="fa fa-cube menu-icon"></i> <span >Error 500</span></a></li>
     <!--
     <li data-ng-class="{active: isActive('/elements')}">
         <a href="/elements" ng-init="collapseUi=true" ng-click="collapseUi=!collapseUi"><i class="fa fa-briefcase menu-icon"></i> <span >UI Kit <i class="text-muted pull-right fa fa-plus-square-o"></i></span></a>
