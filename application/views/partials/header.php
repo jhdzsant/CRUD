@@ -13,7 +13,7 @@
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand pad-left-0" href="/">
+            <a class="navbar-brand pad-left-0" href="<?= base_url('/home') ?>">
              <strong>Promocionat </strong><span style="opacity:0.3">admin</span>
             </a>
         </div>

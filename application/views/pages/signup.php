@@ -1,6 +1,6 @@
 <div class="container-fluid">
     <div class="row">
-        <form class="col-sm-8 form-horizontal" action='' method="POST">
+        <form class="col-sm-8 form-horizontal" action='<?= base_url('/usuario/addUsuario') ?>' method="POST">
             <fieldset>
                 <h4>
                     Sign-up
@@ -39,7 +39,7 @@
 
                 <div class="control-group">
                     <div class="controls">
-                        <button class="btn btn-success">Register</button>
+                        <button class="btn btn-success" type="submit">Register</button>
                     </div>
                 </div>
             </fieldset>
