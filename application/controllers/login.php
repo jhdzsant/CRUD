@@ -30,7 +30,7 @@ class Login extends CI_Controller{
                 $loginUser = $this->login_model->loginUser($email, $password);
                 if ($loginUser === true) {
                     echo "success";
-                    redirect(base_url()."usuario");
+                    redirect(base_url()."home");
                 } else {
                     echo "failed";
                     base_url()."login";
@@ -45,6 +45,7 @@ class Login extends CI_Controller{
     public function logoutUser()
     {
         $this->session->sess_destroy();
+        redirect(base_url().'login');
     }
 
 }

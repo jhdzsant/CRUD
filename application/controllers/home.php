@@ -15,8 +15,13 @@ class Home extends CI_Controller{
 
     public function index()
     {
-        $data['contenido'] = 'index';
+        $dato['contenido'] = 'index';
+        $dato['header'] = 'partials/header';
+        $dato['sidebar'] = 'partials/sidebar';
+        $dato['titulo'] = 'Inicio';
+
         $this->load->view('template',$dato);
+
     }
 
 }
