@@ -19,7 +19,7 @@ class Usuario extends CI_Controller{
         */
     }
     function getUsuarios(){
-        $this-usuariomodelo->getUsuarios();
+        $this->usuariomodelo->getUsuarios();
     }
 
     function addUsuario(){
