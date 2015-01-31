@@ -8,30 +8,34 @@ class Usuario extends CI_Controller{
     }
 
     function index(){
-        $dato['contenido'] = 'pages/signup';
+        // $sesion busca el valor que alla en la sesion
+        $sesion =  ($this->session->userdata('usuario'));
+
+        // Verifica si $sesion esta definido, si no tiene valor o si el valor es nulo
+        if(!isset  ($sesion) ||  $sesion == '' ||  $sesion == NULL){
+            //redirecciona a la pagina de login
+            redirect(base_url('login', 'refresh'));
+        }
+        $dato['contenido'] = 'usuario/usuarioconsulta';
         $dato['header'] = 'partials/header';
         $dato['sidebar'] = 'partials/sidebar';
         $dato['titulo'] = 'Registrar Usuario';
-
         $this->load->view('template',$dato);
-        /*
-        $sesion = $this->session->getUsuarioId();
-        if(!isset $sesion || $sesion = '' || $sesion == NULL){
-            redirect($base_url."/dashboard");
-        }else{
-            redirect('localhost/login');
         }
-        */
-    }
     function getUsuarios(){
-        $this->usuariomodelo->getUsuarios();
+        $usuario = $this->usuariomodelo->getUsuarios();
+        $dato['contenido'] = 'usuario/usuarioconsulta';
+        $dato['header'] = 'partials/header';
+        $dato['sidebar'] = 'partials/sidebar';
+        $dato['titulo'] = 'Registrar Usuario';
+        $dato['usuario'] = $usuario;
+        $this->load->view('template',$dato);
     }
 
     function addUsuario(){
         $this->load->view('usuario');
-        $email      = $this->input->post('email');
-        $password   = $this->input->post('password');
-
+        $email          = $this->input->post('email');
+        $password       = $this->input->post('password');
         $dato = $this->usuariomodelo->addUsuario($email, $password);
         if($dato = TRUE){
             echo "el usuario se agrego correctamente";

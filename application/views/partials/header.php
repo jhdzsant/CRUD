@@ -54,7 +54,7 @@
                    </a>
                    <ul class="dropdown-menu pull-right">
                      <li><a href="/user-profile"><i class="pull-right glyphicon glyphicon-cog"></i> Settings</a></li>
-                     <li><a href="" data-toggle="modal" data-target="#modalLogout"><i class="pull-right glyphicon glyphicon-lock"></i> Log Out</a></li>
+                     <li><a href="<?= base_url('login/logoutUser') ?>" data-toggle="modal"><i class="pull-right glyphicon glyphicon-lock"></i> Log Out</a></li>
                    </ul>
                  </li>
              </ul>

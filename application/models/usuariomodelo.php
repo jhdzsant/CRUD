@@ -7,10 +7,13 @@ class UsuarioModelo extends CI_Model{
 
     function getUsuarios(){
 
-        $this->db->select('*');
-        $this->db->from('usuario');
-        $respuesta = $this->db->result();
-        return encode_json($respuesta);
+        $consulta = $this->db->get('users');
+        if ($consulta->num_rows() > 0) {
+            foreach ($consulta->result() as $fila) {
+                $data[] = $fila;
+            }
+            return $data;
+        }
     }
 
     function addUsuario($email, $password){

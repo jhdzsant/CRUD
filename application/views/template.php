@@ -71,7 +71,7 @@
             </div>
             <div class="modal-footer">
                 <div class="col-sm-4"><a href="" data-dismiss="modal" class="btn btn-default btn-block">Cancelar</a></div>
-                <div class="col-sm-8"><a action="<?= base_url('login/logoutUser') ?>" data-dismiss="modal" class="btn btn-primary btn-block" href="<?= base_url('login') ?>"><strong>Sí, Salir</strong></a></div>
+                <div class="col-sm-8"><a href="<?= base_url('login/logoutUser') ?>" data-dismiss="modal" class="btn btn-primary btn-block"><strong>Sí, Salir</strong></a></div>
             </div>
         </div>
     </div>

@@ -15,10 +15,17 @@ class Home extends CI_Controller{
 
     public function index()
     {
+        $sesion =  ($this->session->userdata('usuario'));
+
+        echo $sesion;
+        if(!isset  ($sesion) ||  $sesion == '' ||  $sesion == NULL){
+            redirect(base_url('login', 'refresh'));
+        }
+        $session = $this->session->userdata('usuario');
         $dato['contenido'] = 'index';
         $dato['header'] = 'partials/header';
         $dato['sidebar'] = 'partials/sidebar';
-        $dato['titulo'] = 'Inicio';
+        $dato['titulo'] = $session;
 
         $this->load->view('template',$dato);
 
