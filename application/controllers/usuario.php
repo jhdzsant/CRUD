@@ -16,10 +16,15 @@ class Usuario extends CI_Controller{
             //redirecciona a la pagina de login
             redirect(base_url('login', 'refresh'));
         }
+        $usuario = $this->usuariomodelo->getUsuarios();
         $dato['contenido'] = 'usuario/usuarioconsulta';
         $dato['header'] = 'partials/header';
         $dato['sidebar'] = 'partials/sidebar';
-        $dato['titulo'] = 'Registrar Usuario';
+        $dato['footer'] = 'partials/footer';
+        $dato['menu_items'] = 'partials/menu_items';
+        $dato['titulo'] = 'Usuarios';
+        $dato['menu_items_sm'] = 'partials/menu_items_sm';
+        $dato['usuario'] = $usuario;
         $this->load->view('template',$dato);
         }
     function getUsuarios(){
@@ -27,6 +32,7 @@ class Usuario extends CI_Controller{
         $dato['contenido'] = 'usuario/usuarioconsulta';
         $dato['header'] = 'partials/header';
         $dato['sidebar'] = 'partials/sidebar';
+        $dato['footer'] = 'partials/footer';
         $dato['titulo'] = 'Registrar Usuario';
         $dato['usuario'] = $usuario;
         $this->load->view('template',$dato);

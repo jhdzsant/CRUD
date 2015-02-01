@@ -38,7 +38,7 @@ class Login extends CI_Controller{
                     redirect(base_url('home'));
                 } else {
                     echo "failed";
-                    base_url()."login";
+
                 }
             }
         } else {

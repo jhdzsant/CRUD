@@ -7,7 +7,7 @@
             <h4>Usuarios</h4>
         </div>
         <div class="panel-body panel-refresh" id="userListPanel">
-            <div class="table-responsive" ng-show="filteredItems > 0">
+             <div class="table-responsive" ng-show="filteredItems > 0">
                 <table id="user-signups" class="table table-striped table-bordered">
                     <thead>
                     <tr>

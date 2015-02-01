@@ -37,7 +37,7 @@
             <div class="fade-in"></div>
             <?= $this->load->view($contenido) ?>
         </div><!--/main-->
-        <div footer></div>
+        <div><?= $this->load->view($footer) ?></div>
     </div>
 </div>
 

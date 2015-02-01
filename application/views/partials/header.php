@@ -21,7 +21,8 @@
             <ul class="nav navbar-nav">
 			  <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">Mas <i class="fa fa-caret-down"></i></a>
-                <ul menu-items-sm class="dropdown-menu">
+                <ul class="dropdown-menu">
+                    <?= $this->load->view($menu_items_sm); ?>
                 </ul>
               </li>
             </ul>

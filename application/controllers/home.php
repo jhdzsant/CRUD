@@ -25,8 +25,11 @@ class Home extends CI_Controller{
         $dato['contenido'] = 'index';
         $dato['header'] = 'partials/header';
         $dato['sidebar'] = 'partials/sidebar';
-        $dato['titulo'] = $session;
-
+        $dato['footer'] = 'partials/footer';
+        $dato['menu_items'] = 'partials/menu_items';
+        $dato['menu_items_sm'] = 'partials/menu_items_sm';
+        $dato['titulo'] = 'Inicio';
+        //Con esta varible es como se debe puede pasar la variable de sesion $session
         $this->load->view('template',$dato);
 
     }
@@ -36,6 +39,9 @@ class Home extends CI_Controller{
         $dato['contenido'] = 'pages/error-404';
         $dato['header'] = 'partials/header';
         $dato['sidebar'] = 'partials/sidebar';
+        $dato['footer'] = 'partials/footer';
+        $dato['menu_items'] = 'partials/menu_items';
+        $dato['menu_items_sm'] = 'partials/menu_items_sm';
         $dato['titulo'] = 'Error 404';
 
         $this->load->view('template',$dato);
@@ -45,6 +51,8 @@ class Home extends CI_Controller{
         $dato['contenido'] = 'pages/error-500';
         $dato['header'] = 'partials/header';
         $dato['sidebar'] = 'partials/sidebar';
+        $dato['menu_items_sm'] = 'partials/menu_items_sm';
+        $dato['footer'] = 'partials/footer';
         $dato['titulo'] = 'Error 500';
 
         $this->load->view('template',$dato);
