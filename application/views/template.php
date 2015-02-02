@@ -52,6 +52,7 @@
 <script src="bootstrap/js/bootstrap.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/less.js/1.7.1/less.min.js"></script>
 
+
 <!-- calendar dependencies -->
 <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/fullcalendar/1.6.4/fullcalendar.min.js"></script>
 <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/fullcalendar/1.6.4/gcal.js"></script>
@@ -76,6 +77,7 @@
         </div>
     </div>
 </div>
+
 
 </body>
 </html>

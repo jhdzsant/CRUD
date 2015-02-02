@@ -32,7 +32,7 @@ class Cliente extends CI_Controller{
         $dato['cliente'] = $respuesta;
         $this->load->view('template',$dato);
     }
-    function objeto(){
+    function getCliente(){
         $respuesta = $this->clientemodelo->getCliente();
         echo $respuesta;
 

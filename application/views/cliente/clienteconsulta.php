@@ -1,5 +1,5 @@
 
-
+<script src="js/usuarioconsulta.js"></script>
 <div class="container-fluid" ng-app="myApp">
     <!--userlist-->
     <div class="panel panel-default" ng-controller="clienteCtrl">

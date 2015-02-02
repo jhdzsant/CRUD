@@ -13,7 +13,7 @@ app.filter('startFrom', function() {
     }
 });
 app.controller('clienteCtrl', function ($scope, $http, $timeout) {
-    $http.get('http://localhost/CRUD/cliente/objeto').success(function(data){
+    $http.get('http://localhost/CRUD/cliente/getCliente').success(function(data){
         $scope.list = data;
         $scope.currentPage = 1; //current page
         $scope.entryLimit = 5; //max no of items to display in a page
