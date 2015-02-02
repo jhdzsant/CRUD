@@ -31,11 +31,11 @@
 
                 <div class="control-group">
                     <label class="control-label"  for="password_confirm">Password (confirm)</label>
-                    <div class="controls">
+                     <div class="controls">
                         <input type="password" id="password_confirm" name="password_confirm" placeholder="" class="form-control input-lg">
                         <p class="small help-block">Type your password again to confirm</p>
                     </div>
-                </div>
+               </div>
 
                 <div class="control-group">
                     <div class="controls">

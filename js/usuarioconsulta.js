@@ -1,7 +1,7 @@
 /**
  * Created by Juls on 31/01/2015.
  */
-var app = angular.module('myApp',['ui.bootstrap']);
+var app = angular.module('myApp',[]);
 
 app.filter('startFrom', function() {
     return function(input, start) {
@@ -12,8 +12,8 @@ app.filter('startFrom', function() {
         return [];
     }
 });
-app.controller('usuariosCrtl', function ($scope, $http, $timeout) {
-    $http.get('http://localhost/CRUD/usuario/getUsuarios').success(function(data){
+app.controller('clienteCtrl', function ($scope, $http, $timeout) {
+    $http.get('http://localhost/CRUD/cliente/objeto').success(function(data){
         $scope.list = data;
         $scope.currentPage = 1; //current page
         $scope.entryLimit = 5; //max no of items to display in a page

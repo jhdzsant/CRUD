@@ -45,6 +45,7 @@
                 </form>
             </div><!--/modal-body-->
         </div><!--/modal-content-->
+
     </div><!--/dialog-->
 </div><!--/modal-->
 

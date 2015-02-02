@@ -24,6 +24,8 @@
     </ul>
 </li>
 <li><a href="<?= base_url('usuario') ?>"><i class="fa fa-users menu-icon"></i> <span >Usuarios</span></a></li>
+<li><a href="<?= base_url('cliente') ?>"><i class="fa fa-users menu-icon"></i> <span >Cliente</span></a></li>
+<li><a href="<?= base_url('cliente/altaCliente') ?>"><i class="fa fa-users menu-icon"></i> <span >Alta-Cliente</span></a></li>
 <!--<li data-ng-class="{active: isActive('/elements')}">
     <a href="/elements" ng-init="collapseUi=true" ng-click="collapseUi=!collapseUi"><i class="fa fa-briefcase menu-icon"></i> <span >UI Kit <i class="text-muted pull-right fa fa-plus-square-o"></i></span></a>
     <ul class="nav nav-sub pull-down collapse" ng-class="{in: !collapseUi}" id="uiMenu">

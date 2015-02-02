@@ -54,8 +54,8 @@
                      <img width="36px" class="img-rounded" src="img/people/men4.jpg">
                    </a>
                    <ul class="dropdown-menu pull-right">
-                     <li><a href="/user-profile"><i class="pull-right glyphicon glyphicon-cog"></i> Settings</a></li>
-                     <li><a href="<?= base_url('login/logoutUser') ?>" data-toggle="modal"><i class="pull-right glyphicon glyphicon-lock"></i> Log Out</a></li>
+                     <li><a href="<?= base_url('user_profile') ?>"><i class="pull-right glyphicon glyphicon-cog"></i> Configuración</a></li>
+                     <li><a href="<?= base_url('login/logoutUser') ?>" data-toggle="modal"><i class="pull-right glyphicon glyphicon-lock"></i> Salir</a></li>
                    </ul>
                  </li>
              </ul>
